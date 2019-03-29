@@ -27,11 +27,14 @@ export default class Content extends Component {
   changeSelected = tab => {
     // this function should take in the tab and update the state with the new tab.
     let change = this.state.tabs.includes(tab)
+    console.log(change)
+
+    if (change){
 
     this.setState({
-      selected: change
+      selected: tab
     })
-
+  }
   };
 
   filterCards = () => {
@@ -48,13 +51,16 @@ export default class Content extends Component {
         - else, it should only return those cards whose 'tab' matched this.state.selected.
     */
 
+    let cardStack = []
+
     if (this.state.selected === 'all') {
       this.state.cards = cardData
     }
     else {
-      let cardStack = this.state.cards.filter( event => 
+      cardStack = this.state.cards.map( event => 
         event.tab === this.state.selected &&
-        console.log(event.tab)
+        cardStack.push(event) &&
+        console.log(cardStack)
       )
 
       this.state.cards = cardStack
