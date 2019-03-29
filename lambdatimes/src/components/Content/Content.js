@@ -52,18 +52,17 @@ export default class Content extends Component {
     */
 
     let cardStack = []
+    cardStack = this.state.cards.filter( event => 
+      event.tab === this.state.selected &&
+      cardStack.push(event)
+    )
 
     if (this.state.selected === 'all') {
-      this.state.cards = cardData
+      return this.state.cards
     }
     else {
-      cardStack = this.state.cards.map( event => 
-        event.tab === this.state.selected &&
-        cardStack.push(event) &&
-        console.log(cardStack)
-      )
-
-      this.state.cards = cardStack
+      console.log(cardStack)
+      return cardStack
     }
     // console.log(this.state.cards)
     return this.state.cards;
