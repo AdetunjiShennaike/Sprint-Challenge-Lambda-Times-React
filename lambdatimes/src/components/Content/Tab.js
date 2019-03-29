@@ -21,7 +21,7 @@ const Tab = props => {
 
 // Make sure you include PropTypes on your props.
 
-cards.propTypes = {
+Tab.propTypes = {
   tab: PropTypes.string.isRequired
 }
 

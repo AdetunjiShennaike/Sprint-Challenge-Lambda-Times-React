@@ -21,7 +21,7 @@ const Cards = props => {
 
 // Make sure you include prop types for all of your incoming props
 
-cards.propTypes = {
+Cards.propTypes = {
   headline: PropTypes.string,
   img: PropTypes.string,
   author: PropTypes.string
